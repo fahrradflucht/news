@@ -146,6 +146,16 @@ class Application extends App
             $config->set('HTML.ForbiddenAttributes', 'class');
             $config->set('Cache.SerializerPath', $directory);
             $config->set('HTML.SafeIframe', true);
+            $config->set('URI.AllowedSchemes', [
+                'ftp' => true,
+                'http' => true,
+                'https' => true,
+                'lbry' => true,
+                'mailto' => true,
+                'news' => true,
+                'nntp' => true,
+                'tel' => true,
+            ]);
             $config->set(
                 'URI.SafeIframeRegexp',
                 '%^https://(?:www\.)?(' .
